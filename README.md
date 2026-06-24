@@ -207,14 +207,14 @@ install.packages(c(
 Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/bayesian-hospital-visits.git
+git clone https://github.com/Mateus-Auza/bayesian-hospital-visits.git
 cd bayesian-hospital-visits
 ```
 
 Run the analysis:
 
 ```r
-source("code/Bayes.R")
+source("code/Bayes_code.R")
 ```
 
 ---
