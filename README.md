@@ -4,7 +4,7 @@ A Bayesian hierarchical Poisson regression model implemented in **R** and **JAGS
 
 ## Project Overview
 
-This project develops a hierarchical Bayesian framework for modeling hospital visit counts. The model incorporates both patient-level covariates and hospital-specific random effects, allowing for a flexible representation of variability across healthcare institutions.
+This project develops a Bayesian hierarchical Poisson model for hospital visit counts using custom Metropolis-within-Gibbs MCMC in R. Hospital-specific random effects capture heterogeneity across institutions, and results are validated against an equivalent JAGS implementation.
 
 The project includes:
 
@@ -15,6 +15,14 @@ The project includes:
 - Validation against JAGS
 - Sensitivity analysis to prior specification
 
+---
+
+## Key Results
+
+- Age and chronic conditions increase expected hospital visits.
+- Significant heterogeneity exists across hospitals.
+- Custom MCMC results closely match JAGS estimates.
+- Hierarchical structure improves interpretability of hospital-level variation.
 ---
 
 ## Repository Structure
@@ -43,6 +51,18 @@ The project includes:
 
 ---
 
+## Dataset
+
+The dataset contains:
+
+- Patient age
+- Chronic condition indicator
+- Hospital identifier
+- Number of hospital visits
+
+Each observation corresponds to a single patient.
+
+---
 ## Statistical Model
 
 For patient *i* belonging to hospital *g(i)*:
@@ -149,7 +169,7 @@ The model was independently implemented in **JAGS** using the `rjags` package.
 ### Comparison of Hospital Effects
 
 <p align="center">
-  <img src="figures/jags_comparsion_hospital_effects.png" width="700">
+  <img src="figures/jags_comparison_hospital_effects.png" width="700">
 </p>
 
 Both implementations produce similar posterior distributions and hospital-level patterns, providing validation of the custom MCMC algorithm.
@@ -184,6 +204,20 @@ A simpler non-hierarchical Poisson model was also evaluated.
 | Hierarchical Poisson | 3792.1 |
 
 Although the hierarchical model captures hospital heterogeneity, the simpler model achieved a lower DIC and was preferred according to this criterion.
+
+---
+
+## Skills Demonstrated
+
+- Bayesian hierarchical modeling
+- Poisson regression
+- MCMC (Metropolis-within-Gibbs)
+- Gibbs sampling
+- Metropolis-Hastings
+- JAGS
+- Posterior predictive checks
+- Convergence diagnostics
+- Statistical computing in R
 
 ---
 
