@@ -67,9 +67,9 @@ Each observation corresponds to a single patient.
 
 For patient *i* belonging to hospital *g(i)*:
 
-\[
+$$
 Y_i \sim \text{Poisson}(v_{g(i)} \exp(\eta_i))
-\]
+$$
 
 where
 
@@ -160,17 +160,9 @@ The posterior distributions reveal substantial differences across hospitals, sup
 
 The model was independently implemented in **JAGS** using the `rjags` package.
 
-### Comparison of Fixed Effects
-
-<p align="center">
-  <img src="figures/jags_comparison_beta.png" width="400">
-</p>
-
-### Comparison of Hospital Effects
-
-<p align="center">
-  <img src="figures/jags_comparison_hospital_effects.png" width="700">
-</p>
+| Fixed Effects | Hospital Effects |
+|---------------|------------------|
+| <img src="figures/jags_comparison_beta.png" width="350"> | <img src="figures/jags_comparison_hospital_effects.png" width="350"> |
 
 Both implementations produce similar posterior distributions and hospital-level patterns, providing validation of the custom MCMC algorithm.
 
